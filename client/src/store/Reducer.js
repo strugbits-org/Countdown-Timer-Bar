@@ -109,7 +109,17 @@ export const Reducer = (state, action) => {
         case 'CANCEL_TIMER':
             return {
                 ...state,
-                cancel:action.payload
+                cancel:action.payload //Boolean
+            }
+        case 'HIDE_LIST':
+            return{
+                ...state,
+                isHideList:action.payload //Boolean
+            }    
+        case 'GET_TIMER':
+            return {
+                ...state,
+                timerList:action.payload // Array
             }
         default:
             return {

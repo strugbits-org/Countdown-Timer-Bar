@@ -5,24 +5,25 @@ import CreateNewBar from '../components/CreateNewBar'
 import Preview from '../components/Preview'
 import ScreenButtons from '../components/ScreenButtons'
 import { RootContext } from '../store/GlobalState'
-import {getTimerList} from '../store'
+import { getTimerList } from '../store'
 
 
 const Dashboard = () => {
     // const { isCreate } = useContext(RootContext)
 
     //Global State
-    const {cancel} = useContext(RootContext)
+    const { cancel, GET_TIMER, isCreate, timerList } = useContext(RootContext)
 
 
-    const [isCreate, setIsCreate] = useState(false)
+    // const [isCreate, setIsCreate] = useState(false)
 
-    const [predefinedTemplate, setPredefinedTemplate] = useState('')
 
-    useEffect(() => {
-        console.log('predefinedTemplate', predefinedTemplate)
-        
-    })
+    useEffect(async () => {
+        if (timerList.length === 0) {
+            let a = await getTimerList()
+            GET_TIMER(await a.timerData)
+        }
+    }, [])
 
     function restForm() {
         return (
@@ -42,7 +43,7 @@ const Dashboard = () => {
     return (
         <div className="App">
             <Guidance />
-            <CreateNewBar setVal={setIsCreate} />
+            <CreateNewBar />
 
             {/* If User Press "Create New Bar" button then render <BasicTemplate/> */}
             {isCreate && restForm()}

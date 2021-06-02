@@ -1,5 +1,5 @@
 import '../App.css'
-import React, {useContext} from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import { Button } from "@material-ui/core"
 import { makeStyles } from '@material-ui/core/styles';
 import { RootContext } from '../store/GlobalState'
@@ -26,14 +26,15 @@ const useStyles = makeStyles({
 
                 
 
-const CreateNewBar = ({setVal}) => {
+const CreateNewBar = () => {
     const style = useStyles()
 
-    const {creatingBar, cancelTimer} = useContext(RootContext)
+    const {creatingBar, cancelTimer, timerList, hideList, isHideList} = useContext(RootContext)
 
     function createNew(){
         cancelTimer(false)
-        setVal(true)
+        creatingBar(true)
+        hideList(false)
     }
 
     return (
@@ -44,7 +45,7 @@ const CreateNewBar = ({setVal}) => {
                 <Button classes={{ root: style.root }} onClick={() => createNew()}>Create New Bar</Button>
             </div>
             <div>
-                <TimerList />
+                {(timerList.length > 0 && isHideList ) && <TimerList />}
             </div>
         </div>
     )

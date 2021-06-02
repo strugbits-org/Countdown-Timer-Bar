@@ -5,7 +5,7 @@ import { RootContext } from '../store/GlobalState'
 
 const FormButtonsGroup = () => {
     const [collapse, setCollapse] = useState(false)
-    const { first, barStyle, cancelTimer, cancel } = useContext(RootContext)
+    const { first, barStyle, cancelTimer, cancel, hideList } = useContext(RootContext)
     // Content
     const { barName, mesgBeforeTimer, mesgAfterTimer, clickable, buttonText, linkURL, newTab } = barStyle.content
     // Timer
@@ -37,6 +37,7 @@ const FormButtonsGroup = () => {
     function btnCancel() {
         console.log(cancel)
         cancelTimer(true)
+        hideList(true)  
     }
 
     function btnSave() {

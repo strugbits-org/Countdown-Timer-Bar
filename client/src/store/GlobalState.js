@@ -3,12 +3,14 @@ import { Reducer } from './Reducer'
 
 const initialState = {
     isCreate: false,
+    isHideList:true,
     cancel:false,
     stLink: {
         isNone: false,
         isBarClick: false,
         isButtonClick: true,
     },
+    //Store values when creating time bar (First Store locally then data saved on database with fetch API)
     barStyle: {
         template: {
             backgroundColor: '#000000',
@@ -51,7 +53,9 @@ const initialState = {
             excludeLocation: ''
         },
         
-    }
+    },
+    //Store All Timers of a User (Come from a fetch API)
+    timerList:[],
 }
 
 export const RootContext = createContext(initialState)
@@ -129,7 +133,7 @@ export const Provider = ({ children }) => {
         })
     }
 
-    // Targeting Configuration Form - Component
+    // For Cancel Button When Click on Cancel hide form.
     const cancelTimer = (bool) => {
         // console.log('setContentField - - - - >', objData)
         dispatch({
@@ -138,6 +142,21 @@ export const Provider = ({ children }) => {
         })
     }
 
+    // If we have timer list and user click on create new timer,so timer lsit will be hidden
+    const hideList = (bool) => {
+        dispatch({
+            type: 'HIDE_LIST',
+            payload: bool
+        })
+    }
+
+    // Set Timer List on Global State 
+    const GET_TIMER = (arr) => {
+        dispatch({
+            type: 'GET_TIMER',
+            payload: arr
+        })
+    }
 
 
 
@@ -154,11 +173,16 @@ export const Provider = ({ children }) => {
             setStyleField,
             setTargetField,
             cancelTimer,
+            hideList,
+            GET_TIMER,
             isCreate: state.isCreate,
             cancel:state.cancel,
             stateLink: state.link,
             barStyle: state.barStyle,
-            stLink: state.stLink
+            stLink: state.stLink,
+            timerList:state.timerList,
+            isHideList:state.isHideList
+            
         }}>
             {children}
         </RootContext.Provider>
