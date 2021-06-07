@@ -116,6 +116,16 @@ export const Reducer = (state, action) => {
                 ...state,
                 isHideList:action.payload //Boolean
             }    
+        case 'INITIAL_BAR':
+            return{
+                ...state,
+                barStyle:action.payload,    //Object
+                stLink:{
+                    isNone: false,
+                    isBarClick: false,
+                    isButtonClick: true,
+                } 
+            }    
         case 'GET_TIMER':
             return {
                 ...state,

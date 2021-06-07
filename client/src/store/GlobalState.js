@@ -10,6 +10,50 @@ const initialState = {
         isBarClick: false,
         isButtonClick: true,
     },
+    // Default Bar State its use only when user click on cancel timer for set default values of barstyle.
+    defaultBarStyle: {
+        template: {
+            backgroundColor: '#000000',
+            color: '#DAA520'
+        },
+        content: {
+            barName: '',
+            mesgBeforeTimer: '',
+            mesgAfterTimer: '',
+            clickable: 'buttonClickable',
+            buttonText: 'Shop Now',
+            linkURL: '',
+            newTab: false,
+        },
+        timer: {
+            startTime: '',
+            endTime: '',
+        },
+        style: {
+            backgroundColor: '#000000',
+            buttonBackgroundColor: '#DAA520',
+            timerBackgroundColor: '#DAA520',
+            textColor: '#DAA520',
+            buttonTextColor: '#000000',
+            timerDigitColor: '#000000',
+            backgroundColorOpacity: 'FF',
+            backgroundImage: '',
+            buttonAnimation: '',
+            fonts: ``,
+            language: '',
+            fontSize: '14',
+            barPadding: '5',
+            secToDisplay: '',
+            intervalSec: '',
+            secToAnimate: '',
+        },
+        targeting: {
+            customerTargeting: '',
+            targetLocation: '',
+            excludeLocation: ''
+        },
+        
+    },
     //Store values when creating time bar (First Store locally then data saved on database with fetch API)
     barStyle: {
         template: {
@@ -149,6 +193,14 @@ export const Provider = ({ children }) => {
             payload: bool
         })
     }
+    // Set Initial Style Of Bar 
+    const initialBar = (obj) => {
+        dispatch({
+            type: 'INITIAL_BAR',
+            payload: obj
+        })
+    }
+
 
     // Set Timer List on Global State 
     const GET_TIMER = (arr) => {
@@ -157,7 +209,7 @@ export const Provider = ({ children }) => {
             payload: arr
         })
     }
-
+    
 
 
 
@@ -175,9 +227,11 @@ export const Provider = ({ children }) => {
             cancelTimer,
             hideList,
             GET_TIMER,
+            initialBar,
             isCreate: state.isCreate,
             cancel:state.cancel,
             stateLink: state.link,
+            defaultBarStyle: state.defaultBarStyle,
             barStyle: state.barStyle,
             stLink: state.stLink,
             timerList:state.timerList,

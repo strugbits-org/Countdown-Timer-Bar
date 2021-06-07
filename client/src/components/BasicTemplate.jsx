@@ -5,32 +5,32 @@ import { RootContext } from '../store/GlobalState'
 // Style Properties of Timer Template
 const style = {
     boldAndClear:{
-        backgroundColor: 'black',
-        color: 'goldenrod',
+        backgroundColor: '#000000',
+        color: '#DAA520',
     },
     shadesOfGrey:{
         backgroundColor: '#4c4c4c',
-        color: 'white',
+        color: '#ffffff',
     },
     brightAndElegant:{
         backgroundColor: '#f2f2f2',
-        color: 'black',
+        color: '#000000',
     },
     itsEasy:{
-        backgroundColor: '#fff',
+        backgroundColor: '#ffffff',
         color: '#ff4949',
     },
     harvestGold:{
         backgroundColor: '#fff0a5',
-        color: 'brown',
+        color: '#964B00',
     },
     goodMood:{
         backgroundColor: '#a5fff3',
-        color: 'green',
+        color: '#008000',
     },
     trustMe:{
         backgroundColor: '#0687ff',
-        color: 'white',
+        color: '#ffffff',
     },
     fairyTale:{
         backgroundColor: '#f7bfa6',
