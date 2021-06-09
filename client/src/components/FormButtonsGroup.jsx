@@ -93,7 +93,7 @@ const FormButtonsGroup = () => {
             redirect: 'follow'
         };
 
-        fetch("/admin/createtimer", requestOptions) //http://localhost:3001
+        fetch("http://localhost:3001/admin/createtimer", requestOptions) //http://localhost:3001
             .then(response => response.text())
             .then(result => console.log('POST RESULT - - - - >', JSON.parse(result)))
             .catch(error => console.log('error', error));
