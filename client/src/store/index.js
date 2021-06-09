@@ -1,4 +1,4 @@
-let apiURL = "/admin/getTimer"
+let apiURL = "/admin/gettimer" // http://localhost:3001
 
 // Get Tiemr List
 export const getTimerList = async () => {
