@@ -4,7 +4,8 @@ var app = express();
 var bodyParser = require("body-parser");
 var timerRoutes = require("./router/timerRoutes")
 //requiring db credentials
-require("./db")
+require("./db");
+var cors = require('cors');
 
 
 //using bodyparser for client-side requests
@@ -13,6 +14,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 
 
+app.use(cors);
 //setting headers for cors
 app.use((req,res,next)=>{
     res.setHeader('Access-Control-Allow-Origin','*');
