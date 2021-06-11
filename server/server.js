@@ -24,7 +24,8 @@ app.use((req,res,next)=>{
 })
 
 //calling timerroutes
-app.use("/admin", timerRoutes)
+app.use("/admin", timerRoutes);
+console.log("hello")
 
 
 
