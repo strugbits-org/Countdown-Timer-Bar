@@ -20,7 +20,7 @@ const Dashboard = () => {
 
     useEffect(async () => {
         if (timerList.length === 0) {
-            let a = await getTimerList().catch((err)=>{console.log(err)})
+            let a = await getTimerList()
             GET_TIMER(await a.timerData)
         }
     }, [])
