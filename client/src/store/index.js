@@ -2,9 +2,8 @@ let apiURL = "countdown-timer-bar-backend/admin/gettimer" // http://localhost:30
 
 // Get Tiemr List
 export const getTimerList = async () => {
-   const apiData = await fetch(apiURL)
+   const apiData = await fetch(apiURL).catch((err)=>{console.log(err)})
+   console.log('Data - - - - - - - >',apiData)
    const data = await apiData.json()
-   console.log('Data - - - - - - - >',data)
- 
    return data
 } 
