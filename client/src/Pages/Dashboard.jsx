@@ -20,7 +20,7 @@ const Dashboard = () => {
 
     useEffect(async () => {
         if (timerList.length === 0) {
-            let a = await getTimerList();
+            let a = await getTimerList()
             GET_TIMER(await a.timerData)
         }
     }, [])
