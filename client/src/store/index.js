@@ -1,4 +1,4 @@
-let apiURL = "countdown-timer-bar-backend/admin/gettimer" // http://localhost:3001
+let apiURL = "/admin/gettimer" // http://localhost:3001
 
 // Get Tiemr List
 export const getTimerList = async () => {
