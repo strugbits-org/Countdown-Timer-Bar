@@ -17,7 +17,7 @@ export const functiontoFetch = async(code) => {
     let myHeaders = {
        "Content-Type": "application/json"
     }
-    var raw = JSON.stringify({ "grant_type": "authorization_code", "client_id": "e8d352b7-a56d-4a45-9192-0fab8dd4bdfb", "client_secret": "810e1aa4-a3bb-408d-8047-86f9f2bbb97d", "code": code });
+    var raw = JSON.stringify({ "grant_type": "authorization_code", "client_id": "ad68a181-8785-47ea-bdca-6e2023af5f58", "client_secret": "88ab017c-6c9d-47ed-a372-e334e48a45fe", "code": code });
     var requestOptions = {
         method: 'POST',
         headers: myHeaders,

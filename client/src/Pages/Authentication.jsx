@@ -6,7 +6,7 @@ const Authentication = () => {
     const token = new URLSearchParams(search).get('token');
     console.log(token)
     if(token !== null){
-        let appID = "&appId=e8d352b7-a56d-4a45-9192-0fab8dd4bdfb";let redirect = "&redirectUrl=https://www.strugbits.com/redirect"
+        let appID = "&appId=ad68a181-8785-47ea-bdca-6e2023af5f58";let redirect = "&redirectUrl=https://www.strugbits.com/redirect"
         window.location.replace('https://www.wix.com/installer/install?'+token+appID+redirect)
     }
     return (
