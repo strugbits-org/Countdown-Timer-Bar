@@ -1,7 +1,7 @@
 import React from 'react'
 import { useLocation } from "react-router-dom";
 var axios = require('axios');
-import { Fetch } from 'react-request';
+// import { Fetch } from 'react-request';
 
 const Redirect = async(props) => {
     const search = useLocation().search;
