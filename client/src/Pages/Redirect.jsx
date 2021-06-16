@@ -1,13 +1,16 @@
 import React from 'react'
 import { useLocation } from "react-router-dom";
 var axios = require('axios');
+import { Fetch } from 'react-request';
 
-const Redirect = (props) => {
+const Redirect = async(props) => {
     const search = useLocation().search;
     let code = new URLSearchParams(search).get('code');
     if (code !== null) {
-        console.log(code)
-        // functiontoFetch(code);
+        let token = await functiontoFetch(code);
+        console.log('token is here', token);
+        debugger
+        window.location.replace('https://www.wix.com/_api/site-apps/v1/site-apps/token-received?access_token='+token.access_token);
     }
     return (
         <div>
@@ -19,31 +22,47 @@ const Redirect = (props) => {
 //--- fucntion to fetch
 
 export const functiontoFetch = async (code) => {
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
     var data = JSON.stringify({
         "grant_type": "authorization_code",
         "client_id": "ad68a181-8785-47ea-bdca-6e2023af5f58",
         "client_secret": "88ab017c-6c9d-47ed-a372-e334e48a45fe",
-        "code": "OAUTH2.eyJraWQiOiJWUTQwMVRlWiIsImFsZyI6IkhTMjU2In0.eyJkYXRhIjoie1wiYXBwSWRcIjpcImFkNjhhMTgxLTg3ODUtNDdlYS1iZGNhLTZlMjAyM2FmNWY1OFwiLFwiaW5zdGFuY2VJZFwiOlwiYjhjYTY5YzMtZjg0My00ZWNkLTlmMDgtMWNlOGYyZjE4MzllXCIsXCJzY29wZVwiOltcIlNDT1BFLkRDLk1BTkFHRS1ZT1VSLUFQUFwiXX0iLCJpYXQiOjE2MjM2NjM3MzMsImV4cCI6MTYyMzY2NDMzM30.5GvzZtYnflJxpBqFct1EamYncZqZka1RqpWXrPAPKBg",
+        "code": "OAUTH2.eyJraWQiOiJWUTQwMVRlWiIsImFsZyI6IkhTMjU2In0.eyJkYXRhIjoie1wiYXBwSWRcIjpcImFkNjhhMTgxLTg3ODUtNDdlYS1iZGNhLTZlMjAyM2FmNWY1OFwiLFwiaW5zdGFuY2VJZFwiOlwiYjhjYTY5YzMtZjg0My00ZWNkLTlmMDgtMWNlOGYyZjE4MzllXCIsXCJzY29wZVwiOltcIlNDT1BFLkRDLk1BTkFHRS1ZT1VSLUFQUFwiXX0iLCJpYXQiOjE2MjM2NzI3NTUsImV4cCI6MTYyMzY3MzM1NX0.hjQMy4gdcwqwyKa8B-oK4gxdS3Cz-ZqTo3SUaB-GUeM",
         "Access-Control-Allow-Origin": "*"
     });
-      
-      var config = {
+
+    var requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: data,
+        mode: 'no-cors',
+        redirect: 'follow'
+    };
+
+    fetch("https://www.wix.com/oauth/access", requestOptions)
+        .then(response => response.text())
+        .then(result => console.log(result))
+        .catch(error => console.log('error', error));
+
+
+    var config = {
         method: 'post',
-        url: 'https://www.wix.com/oauth/access',
-        headers: { 
-          'Content-Type': 'application/json'
+        url: 'https://cors-anywhere.herokuapp.com/https://www.wix.com/oauth/access',
+        headers: {
+            'Content-Type': 'application/json'
         },
-        data : data
-      };
-      
-      axios(config)
-      .then(function (response) {
-        console.log(JSON.stringify(response.data));
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-      
+        data: data
+    };
+
+    axios(config)
+        .then(function (response) {
+            console.log(JSON.stringify(response.data));
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+
 }
 
 
