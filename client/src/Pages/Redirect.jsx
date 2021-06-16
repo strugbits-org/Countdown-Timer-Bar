@@ -1,20 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useLocation } from "react-router-dom";
 var axios = require('axios');
-// import { Fetch } from 'react-request';
 
-const Redirect = async(props) => {
+const Redirect = () => {
     const search = useLocation().search;
-    let code = new URLSearchParams(search).get('code');
-    if (code !== null) {
-        let token = await functiontoFetch(code);
-        console.log('token is here', token);
-        debugger
-        window.location.replace('https://www.wix.com/_api/site-apps/v1/site-apps/token-received?access_token='+token.access_token);
-    }
+    const code = new URLSearchParams(search).get('code');
+    useEffect(async()=>{
+       let token = await functiontoFetch(code);
+       console.log(token)
+       debugger
+       window.location.replace('https://www.wix.com/_api/site-apps/v1/site-apps/token-received?access_token='+token)
+    })
     return (
         <div>
-            <h1 style={{ textAlign: 'center' }}>{code ? code : "Redirect"}</h1>
+            <h1 style={{ textAlign: 'center' }}>hii</h1>
         </div>
     )
 }
@@ -48,7 +47,7 @@ export const functiontoFetch = async (code) => {
 
     var config = {
         method: 'post',
-        url: 'https://cors-anywhere.herokuapp.com/https://www.wix.com/oauth/access',
+        url: 'https://www.wix.com/oauth/access',
         headers: {
             'Content-Type': 'application/json'
         },
