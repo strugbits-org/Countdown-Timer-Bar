@@ -7,7 +7,7 @@ const Redirect = () => {
     const code = new URLSearchParams(search).get('code');
     useEffect(async()=>{
        let token = await functiontoFetch(code);
-       !token.success ? console.log("error", token) : window.location.replace('https://www.wix.com/_api/site-apps/v1/site-apps/token-received?access_token='+token)
+       window.location.replace('https://www.wix.com/_api/site-apps/v1/site-apps/token-received?access_token='+ token)
     })
     return (
         <div>

@@ -8,3 +8,4 @@ export const getTimerList = async () => {
    console.log('Data - - - - - - - >', data)
    return data
 }
+
