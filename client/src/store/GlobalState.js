@@ -208,8 +208,7 @@ export const Provider = ({ children }) => {
             type: 'GET_TIMER',
             payload: arr
         })
-    }
-    
+    }  
 
 
 
