@@ -32,7 +32,7 @@ const useStyles = makeStyles({
 
 
 
-const ScreenButton = ({ btnText, setVal }) => {
+const ScreenButton = ({ btnText, setVal, disable }) => {
     
     const style = useStyles()
 
@@ -40,7 +40,7 @@ const ScreenButton = ({ btnText, setVal }) => {
 
 
     return (
-        <Button classes={{ root: style.root }}  onClick={() => setVal()}>{btnText}</Button>
+        <Button classes={{ root: style.root }} disabled={disable ? true : false} onClick={() => setVal()}>{btnText}</Button>
     )
 }
 

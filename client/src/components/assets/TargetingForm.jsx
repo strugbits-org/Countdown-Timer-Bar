@@ -138,8 +138,8 @@ const TargetingForm = () => {
     }
 
     return (
-        <div className="overFlow">
-            <form noValidate>
+        // <div >
+            <form className="overFlow" noValidate>
                 {/* Customer Targeting */}
                 <div className='mt12'>
                     <FormControl component="fieldset" className={style.fieldset}>
@@ -172,8 +172,8 @@ const TargetingForm = () => {
                     />
                 </div>
             </form>
-            <FormButtonsGroup />
-        </div>
+            // {/* <FormButtonsGroup /> */}
+        //  </div> 
 
     )
 }

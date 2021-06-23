@@ -1,6 +1,5 @@
 import React, { useEffect, useContext } from 'react'
 import '../App.css'
-import { RootContext } from '../store/GlobalState'
 
 import notFound from '../../src/Images/404.jpg'
 
