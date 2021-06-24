@@ -13,6 +13,7 @@ const useStyles = makeStyles({
         border: '0px solid transparent',
         outline: 'none',
         color: "#000",
+        fontFamily:'Arial, Helvetica, sans-serif !important',
         fontSize: '13px',
         padding: '3px 7px',
         textTransform: 'none',

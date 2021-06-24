@@ -11,9 +11,19 @@ import TargetingConfiguration from './TargetingConfiguration'
 import NextScreen from './NextScreen'
 import FormButtonsGroup from './FormButtonsGroup'
 import { useState } from 'react'
+import { RootContext } from '../store/GlobalState'
 
 
 const ScreenButtons = () => {
+    //Get barstyle from Global State
+    // const { barStyle } = useContext(RootContext)
+
+    // Content from barstyle
+    // const { barName, mesgBeforeTimer, mesgAfterTimer, clickable, buttonText, linkURL, newTab } = barStyle.content
+
+    // ----------------------------Local state
+    const [errorText, setErrorText] = useState('')
+
     const [screenCounter, setScreenCounter] = useState(1)
 
     const [basicInit, setBasicInit] = useState(true)
@@ -28,6 +38,7 @@ const ScreenButtons = () => {
     const [timerConfig, setTimerConfig] = useState()
     const [styleConfig, setStyleConfig] = useState()
     const [targetConfig, setTargetConfig] = useState()
+    // ----------------------------Local state
 
     function setActive(basic, content, timer, style, target) {
         basic && setScreenCounter(1)
@@ -56,11 +67,14 @@ const ScreenButtons = () => {
                 console.log('Case 2', counter)
                 setActive(false, true, false, false, false)
                 setContentInit(true);
+                setScreenCounter(screenCounter + 1)
+                
                 break;
             case 3:
                 console.log('Case 3', counter)
                 setActive(false, false, true, false, false)
                 setTimerInit(true);
+                setScreenCounter(screenCounter + 1)
                 break
 
 
@@ -68,21 +82,23 @@ const ScreenButtons = () => {
                 console.log('Case 4', counter)
                 setActive(false, false, false, true, false);
                 setStyleInit(true);
+                setScreenCounter(screenCounter + 1)
                 break
             case 5:
                 console.log('Case 5', counter)
                 setActive(false, false, false, false, true)
                 setTargetInit(true);
+                setScreenCounter(screenCounter + 1)
                 break
 
             default:
                 console.log('Kuch nai chala')
         }
-        
-        setScreenCounter(screenCounter+1)
-
 
         
+
+
+
     }
 
     useEffect(() => {
@@ -104,7 +120,7 @@ const ScreenButtons = () => {
             {timerConfig && <TimerConfiguration />}
             {styleConfig && <StyleConfiguration />}
             {targetConfig && <TargetingConfiguration />}
-            {targetConfig ? <FormButtonsGroup /> : <NextScreen next={nextScreen} />}
+            {targetConfig ? <FormButtonsGroup /> : <NextScreen errorTxt={errorText} next={nextScreen} />}
 
         </>
     )

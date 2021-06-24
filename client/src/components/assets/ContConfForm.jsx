@@ -11,7 +11,7 @@ const useStyles = makeStyles({
         width: '49%',
         color: 'grey',
         '& .MuiOutlinedInput-root': {
-            fontFamily:'Arial, Helvetica, sans-serif !important',
+            fontFamily: 'Arial, Helvetica, sans-serif !important',
             '&:hover fieldset': {
                 borderColor: 'black',
             },
@@ -21,18 +21,25 @@ const useStyles = makeStyles({
             },
         },
         '& .MuiFormLabel-root': {
-            fontFamily:'Arial, Helvetica, sans-serif !important',
+            fontFamily: 'Arial, Helvetica, sans-serif !important',
             color: 'grey'
         },
-        '& .MuiFormHelperText-root':{
-            fontFamily:'Arial, Helvetica, sans-serif !important',
+        '& .MuiFormHelperText-root': {
+            fontFamily: 'Arial, Helvetica, sans-serif !important',
         }
     },
-    formControlLabel:{
-            '& .MuiFormControlLabel-label':{
-                fontFamily:'Arial, Helvetica, sans-serif !important'
-            }
-    }
+    formControlLabel: {
+        '& .MuiFormControlLabel-label': {
+            fontFamily: 'Arial, Helvetica, sans-serif !important'
+        }
+    },
+    // forSelect: {
+    //     '& .MuiSelect-select': {
+    //         fontFamily: 'Arial, Helvetica, sans-serif !important',
+
+    //     }
+    // }
+
 })
 
 
@@ -68,8 +75,8 @@ const ContConfForm = () => {
         const { value } = event.target
         // console.log(' - - -  - -> value & key',value, key)
         const obj = {
-            keyName:key,
-            val:value
+            keyName: key,
+            val: value
         }
         setContentField(obj)
     }
