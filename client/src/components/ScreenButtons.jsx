@@ -24,7 +24,7 @@ const ScreenButtons = () => {
     // ----------------------------Local state
     const [errorText, setErrorText] = useState('')
 
-    const [screenCounter, setScreenCounter] = useState(1)
+    const [screenCounter, setScreenCounter] = useState(0)
 
     const [basicInit, setBasicInit] = useState(true)
     const [contentInit, setContentInit] = useState()
@@ -40,87 +40,98 @@ const ScreenButtons = () => {
     const [targetConfig, setTargetConfig] = useState()
     // ----------------------------Local state
 
-    function setActive(basic, content, timer, style, target) {
-        basic && setScreenCounter(1)
-        content && setScreenCounter(2)
-        timer && setScreenCounter(3)
-        style && setScreenCounter(4)
-        target && setScreenCounter(5)
+    // function setActive(basic, content, timer, style, target) {
+    //     basic && setScreenCounter(1)
+    //     content && setScreenCounter(2)
+    //     timer && setScreenCounter(3)
+    //     style && setScreenCounter(4)
+    //     target && setScreenCounter(5)
 
-        setBasicTemp(basic)
-        setContentConfig(content)
-        setTimerConfig(timer)
-        setStyleConfig(style)
-        setTargetConfig(target)
-    }
+    //     setBasicTemp(basic)
+    //     setContentConfig(content)
+    //     setTimerConfig(timer)
+    //     setStyleConfig(style)
+    //     setTargetConfig(target)
+    // }
 
-    function nextScreen() {
-        let counter = screenCounter
+    // function nextScreen() {
+    //     let counter = screenCounter
 
-        switch (counter) {
-            case 1:
-                setActive(true, false, false, false, false);
-                console.log('Case 1', counter)
-                break;
+    //     switch (counter) {
+    //         case 1:
+    //             setActive(true, false, false, false, false);
+    //             console.log('Case 1', counter)
+    //             break;
 
-            case 2:
-                console.log('Case 2', counter)
-                setActive(false, true, false, false, false)
-                setContentInit(true);
-                setScreenCounter(screenCounter + 1)
-                
-                break;
-            case 3:
-                console.log('Case 3', counter)
-                setActive(false, false, true, false, false)
-                setTimerInit(true);
-                setScreenCounter(screenCounter + 1)
-                break
+    //         case 2:
+    //             console.log('Case 2', counter)
+    //             setActive(false, true, false, false, false)
+    //             setContentInit(true);
+    //             setScreenCounter(screenCounter + 1)
+
+    //             break;
+    //         case 3:
+    //             console.log('Case 3', counter)
+    //             setActive(false, false, true, false, false)
+    //             setTimerInit(true);
+    //             setScreenCounter(screenCounter + 1)
+    //             break
 
 
-            case 4:
-                console.log('Case 4', counter)
-                setActive(false, false, false, true, false);
-                setStyleInit(true);
-                setScreenCounter(screenCounter + 1)
-                break
-            case 5:
-                console.log('Case 5', counter)
-                setActive(false, false, false, false, true)
-                setTargetInit(true);
-                setScreenCounter(screenCounter + 1)
-                break
+    //         case 4:
+    //             console.log('Case 4', counter)
+    //             setActive(false, false, false, true, false);
+    //             setStyleInit(true);
+    //             setScreenCounter(screenCounter + 1)
+    //             break
+    //         case 5:
+    //             console.log('Case 5', counter)
+    //             setActive(false, false, false, false, true)
+    //             setTargetInit(true);
+    //             setScreenCounter(screenCounter + 1)
+    //             break
 
-            default:
-                console.log('Kuch nai chala')
-        }
-
-        
+    //         default:
+    //             console.log('Kuch nai chala')
+    //     }
 
 
 
-    }
 
-    useEffect(() => {
-        screenCounter === 1 && setScreenCounter(2)
-    }, [screenCounter])
 
+    // }
 
     return (
         <>
-            <div className="flexRow">
+            {/* <div className="flexRow">
                 <ScreenButton btnText='Basic Template' setVal={() => setActive(true, false, false, false, false)} disable={basicInit ? false : true} />
                 <ScreenButton btnText='Content Configuration' setVal={() => setActive(false, true, false, false, false)} disable={contentInit ? false : true} />
                 <ScreenButton btnText='Timer Configuration' setVal={() => setActive(false, false, true, false, false)} disable={timerInit ? false : true} />
                 <ScreenButton btnText='Style Configuration' setVal={() => setActive(false, false, false, true, false)} disable={styleInit ? false : true} />
                 <ScreenButton btnText='Target Configuration' setVal={() => setActive(false, false, false, false, true)} disable={targetInit ? false : true} />
-            </div>
-            {basicTemp && <BasicTemplate />}
+            </div> */}
+            {/* {basicTemp && <BasicTemplate />}
             {contentConfig && <ContentConfiguration />}
             {timerConfig && <TimerConfiguration />}
             {styleConfig && <StyleConfiguration />}
             {targetConfig && <TargetingConfiguration />}
-            {targetConfig ? <FormButtonsGroup /> : <NextScreen errorTxt={errorText} next={nextScreen} />}
+            {targetConfig ? <FormButtonsGroup /> : <NextScreen errorTxt={errorText} count={screenCounter} next={setScreenCounter} />} */}
+            
+            <div className="flexRow">
+                <ScreenButton btnText='Basic Template' setVal={setScreenCounter} val={0} count={screenCounter}/>
+                <ScreenButton btnText='Content Configuration' setVal={setScreenCounter} val={1} count={screenCounter}/>
+                <ScreenButton btnText='Timer Configuration' setVal={setScreenCounter} val={2} count={screenCounter}/>
+                <ScreenButton btnText='Style Configuration' setVal={setScreenCounter} val={3} count={screenCounter}/>
+                <ScreenButton btnText='Target Configuration' setVal={setScreenCounter} val={4} count={screenCounter}/>
+            </div>
+
+            {screenCounter === 0 && <BasicTemplate />}
+            {screenCounter ===  1 && <ContentConfiguration />}
+            {screenCounter === 2 && <TimerConfiguration />}
+            {screenCounter === 3 && <StyleConfiguration />}
+            {screenCounter === 4 && <TargetingConfiguration />}
+            {screenCounter === 4 ? <FormButtonsGroup /> : <NextScreen errorTxt={errorText} count={screenCounter} next={setScreenCounter} />}
+
 
         </>
     )

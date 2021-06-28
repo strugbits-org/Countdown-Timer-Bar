@@ -31,14 +31,15 @@ const useStyles = makeStyles({
 
                 
 
-const NextScreen = ({next, errorTxt}) => {
+const NextScreen = ({next, errorTxt, count}) => {
 
     const style = useStyles()
+    let isCount = count === 4 ? 0 : count+1
 
     return (
         <div className="mt12 nextButton">
             <p className='errorMesg'>{errorTxt}</p>
-            <Button classes={{ root: style.root }} onClick={() => next()}>Next</Button>
+            <Button classes={{ root: style.root }} onClick={() => next(isCount)}>Next</Button>
         </div>
     )
 }
