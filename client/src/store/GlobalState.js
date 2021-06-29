@@ -10,6 +10,8 @@ const initialState = {
         isBarClick: false,
         isButtonClick: true,
     },
+    // Content Form Validation
+    contentValidation:false,
     // Default Bar State its use only when user click on cancel timer for set default values of barstyle.
     defaultBarStyle: {
         template: {
@@ -201,6 +203,13 @@ export const Provider = ({ children }) => {
         })
     }
 
+    // Set Form Validation 
+    const setValidation = (bool, key) => {
+        dispatch({
+            type: 'SET_VALIDATION',
+            payload: {bool, key}
+        })
+    }
 
     // Set Timer List on Global State 
     const GET_TIMER = (arr) => {
@@ -208,7 +217,9 @@ export const Provider = ({ children }) => {
             type: 'GET_TIMER',
             payload: arr
         })
-    }  
+    }
+    
+    
 
 
 
@@ -227,6 +238,8 @@ export const Provider = ({ children }) => {
             hideList,
             GET_TIMER,
             initialBar,
+            setValidation,
+            contentValidation: state.contentValidation,
             isCreate: state.isCreate,
             cancel:state.cancel,
             stateLink: state.link,

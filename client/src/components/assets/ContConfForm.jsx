@@ -5,6 +5,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import { RootContext } from '../../store/GlobalState';
+import NextScreen from '../NextScreen';
 
 const useStyles = makeStyles({
     root: {
@@ -50,7 +51,7 @@ const ContConfForm = () => {
 
     // Global State - - - - 
 
-    const { barActions, barStyle, setContentField, openInNewTab } = useContext(RootContext)
+    const { barActions, barStyle, setContentField, openInNewTab, contentValidation, setValidation } = useContext(RootContext)
     const { barName, mesgBeforeTimer, mesgAfterTimer, clickable, buttonText, linkURL, newTab } = barStyle.content
 
     // - - - - - Global State 
@@ -59,26 +60,20 @@ const ContConfForm = () => {
     const [isNone, setIsNone] = useState(false)
     const [isBarClick, setIsBarClick] = useState(false)
     const [isButtonClick, setIsButtonClick] = useState(true)
+    const [isValiate, setValidate] = useState(false)
 
-    // const [name, setName] = useState('')
-    // const [mesgBeforeTimer, setMesgBeforeTimer] = useState('')
-    // const [mesgAfterTimer, setMesgAfterTimer] = useState('')
-    // const [barClickable, setBarClickable] = useState('buttonClickable')
-    // const [buttonText, setButtonText] = useState('')
-    // const [linkURL, setLinkURL] = useState('')
-    // const [isLinkOpenNewTab, setIsLinkOpenNewTab] = useState(false)
-    // const [includeCloseButton, setIncludeCloseButton] = useState('no')
-    // - - - - -Local State
 
     // Set Values on Global state
     function handler(event, key) {
         const { value } = event.target
         // console.log(' - - -  - -> value & key',value, key)
-        const obj = {
-            keyName: key,
-            val: value
-        }
-        setContentField(obj)
+        // if(value.length > 3){
+            const obj = {
+                keyName: key,
+                val: value
+            }
+            setContentField(obj)
+        // }
     }
 
     // Set Values on Global state
@@ -207,6 +202,7 @@ const ContConfForm = () => {
                         helperText="Dash to the provided link address after clicking the bar"
                         margin="dense"
                         variant="outlined"
+                        type='url'
                         placeholder="e.g. https://testing.com/test"
                         value={linkURL}
                         onChange={(e) => handler(e, 'linkURL')}

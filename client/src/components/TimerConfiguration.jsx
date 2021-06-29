@@ -9,7 +9,7 @@ const TimerConfiguration = () => {
     // const [collapse, setCollapse] = useState(false)
 
     return (
-        <div className="mt12">
+        <div className="mt12 maxFormHeight">
             <div className='contentConfigurationHead flexRow'>
                 <h3>Timer Configuration</h3>
                 {/* <div className="collapseIcon flexColumn" title="Expand"

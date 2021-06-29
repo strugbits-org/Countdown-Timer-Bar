@@ -89,8 +89,12 @@
   height: 100vh;
 }
 .overFlow{
-  max-height: 65vh;
   overflow-y: auto;
+  max-height: 57vh;
+}
+
+.maxFormHeight{
+  height: 60vh;
 }
 /* .defaultFont{
   font-family: Arial, Helvetica, sans-serif;

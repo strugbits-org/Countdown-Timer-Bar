@@ -9,7 +9,7 @@ const ContentConfiguration = () => {
     // const [collapse, setCollapse] = useState(false)
 
     return (
-        <div className="mt12">
+        <div className="mt12 maxFormHeight">
             <div className='contentConfigurationHead flexRow'>
                 <h3>Content Configuration</h3>
                 {/* <div className="collapseIcon flexColumn" title="Expand" onClick={() => { collapse ? setCollapse(false) : setCollapse(true) }}>
@@ -17,7 +17,7 @@ const ContentConfiguration = () => {
                 </div> */}
             </div>
             {/* Content Configuration Form */}
-            <ContConfForm />
+            <ContConfForm/>
         </div>
     )
 }

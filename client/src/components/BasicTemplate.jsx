@@ -54,7 +54,7 @@ const BasicTemplate = () => {
 
     }
     return (
-        <div className="mt12">
+        <div className="mt12 maxFormHeight">
             <h3>Basic Template</h3>
             <ul className="buttonList overFlow">
                 <li className="listItem boldAndClear" onClick={() => scrollToPreview('boldAndClear')} style={style.boldAndClear}>Bold and Clear</li>

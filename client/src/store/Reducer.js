@@ -131,6 +131,12 @@ export const Reducer = (state, action) => {
                 ...state,
                 timerList:action.payload // Array
             }
+        case 'SET_VALIDATION':
+            const {bool, key} = action.payload
+            return {
+                ...state,
+                [key]:bool
+            }    
         default:
             return {
                 ...state
