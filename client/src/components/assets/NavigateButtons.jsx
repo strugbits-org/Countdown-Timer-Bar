@@ -13,6 +13,7 @@ const NavigateButtons = () => {
     return (
             <div className="flexRow mt12">
                 <Button style={styleButton} variant="contained" color="primary" onClick={() => goto('/')}>Home</Button>
+                <Button style={styleButton} variant="contained" color="primary" onClick={() => goto('test')}>Test</Button>
                 <Button style={styleButton} variant="contained" color="primary" onClick={() => goto('dashboard')}>Dashboard</Button>
                 <Button style={styleButton} variant="contained" color="primary" onClick={() => goto('redirect')}>Redirect</Button>
                 <Button style={styleButton} variant="contained" color="primary" onClick={() => goto('auth')}>Authenticate</Button>

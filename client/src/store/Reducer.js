@@ -109,34 +109,39 @@ export const Reducer = (state, action) => {
         case 'CANCEL_TIMER':
             return {
                 ...state,
-                cancel:action.payload //Boolean
+                cancel: action.payload //Boolean
             }
         case 'HIDE_LIST':
-            return{
+            return {
                 ...state,
-                isHideList:action.payload //Boolean
-            }    
+                isHideList: action.payload //Boolean
+            }
         case 'INITIAL_BAR':
-            return{
+            return {
                 ...state,
-                barStyle:action.payload,    //Object
-                stLink:{
+                barStyle: action.payload,    //Object
+                stLink: {
                     isNone: false,
                     isBarClick: false,
                     isButtonClick: true,
-                } 
-            }    
+                }
+            }
         case 'GET_TIMER':
             return {
                 ...state,
-                timerList:action.payload // Array
+                timerList: action.payload // Array
             }
         case 'SET_VALIDATION':
-            const {bool, key} = action.payload
+            const { bool, key } = action.payload
             return {
                 ...state,
-                [key]:bool
-            }    
+                [key]: bool
+            }
+        // case 'SET_TEST':
+        //     return {
+        //         ...state,
+        //         test: action.payload,    //Object
+        //     }
         default:
             return {
                 ...state

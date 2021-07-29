@@ -100,6 +100,7 @@ const initialState = {
         },
         
     },
+    test:{},
     //Store All Timers of a User (Come from a fetch API)
     timerList:[],
 }
@@ -218,6 +219,14 @@ export const Provider = ({ children }) => {
             payload: arr
         })
     }
+
+    // Set Test Input 
+    // const SET_TEST = (obj) => {
+    //     dispatch({
+    //         type: 'SET_TEST',
+    //         payload: obj
+    //     })
+    // }
     
     
 
@@ -237,6 +246,7 @@ export const Provider = ({ children }) => {
             cancelTimer,
             hideList,
             GET_TIMER,
+            // SET_TEST,
             initialBar,
             setValidation,
             contentValidation: state.contentValidation,

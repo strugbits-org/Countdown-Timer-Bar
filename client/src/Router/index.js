@@ -5,6 +5,7 @@ import Authentication from '../Pages/Authentication'
 import Redirect from '../Pages/Redirect'
 import Timer from '../Pages/Timer'
 import Home from '../Pages/Home'
+import Test from '../Pages/Test'
 import NotFound from '../Pages/NotFound'
 
 
@@ -20,6 +21,7 @@ const Routers = () => {
             <Route exact path='/auth' element={<Authentication />} />
             <Route exact path='/redirect' element={<Redirect />} />
             <Route exact path='/timer' element={<Timer />} />
+            <Route exact path='/test' element={<Test />} />
             <Route exact path='*' element={<NotFound />} />
             {/* <Route path='*'>
                 {goto('404')}

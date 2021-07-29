@@ -1,72 +1,80 @@
 /* Fonts */
 
 /* Lato */
+
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap');
-
 /* Roboto */
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
-
 /* Josefin Sans */
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100&family=Roboto:wght@100&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100&family=Roboto:wght@100&display=swap');
 /* Open Sans */
+
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100&family=Open+Sans:wght@300&family=Roboto:wght@100&display=swap');
 /* Fonts */
 
 /* DASH BOARD */
-.header{
+
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
 }
 
-
 /* DASH BOARD */
 
 /* Global */
-.App{
+
+.App {
   width: 768px;
   margin: auto;
 }
 
-.contentBox{
+.contentBox {
   width: 95%;
-  margin:20px auto;
+  margin: 20px auto;
   box-shadow: 3px 3px 10px rgba(128, 128, 128, 0.284);
   border-radius: 6px;
   padding: 10px 25px;
 }
-.flexColumn{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+
+.flexColumn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
-.flexRow{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-.flexRight{
+
+.flexRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flexRight {
   justify-content: flex-end;
-  
 }
-.contentBox h3{
+
+.contentBox h3 {
   margin: 0px;
   margin-bottom: 5px;
 }
-.p0{
+
+.p0 {
   padding: 0px;
 }
-.m0{
+
+.m0 {
   margin: 0px;
 }
-.mt12{
-  margin-top:24px;
+
+.mt12 {
+  margin-top: 24px;
 }
-.button{
+
+.button {
   padding: 8px 10px;
   margin: 0px 5px;
   cursor: pointer;
@@ -77,115 +85,180 @@
   background-color: white;
   color: black;
 }
-.button:hover{
+
+.button:hover {
   background-color: rebeccapurple;
   color: white;
   border: 1px solid transparent;
 }
-.active{
+
+.active {
   background-color: rebeccapurple !important;
 }
-.fullHeight{
+
+.fullHeight {
   height: 100vh;
 }
-.overFlow{
+
+.overFlow {
   overflow-y: auto;
   max-height: 57vh;
 }
 
-.maxFormHeight{
+.maxFormHeight {
   height: 60vh;
 }
+
 /* .defaultFont{
   font-family: Arial, Helvetica, sans-serif;
 } */
+
 /* Global */
 
+.test {
+  margin-top: 30px;
+  justify-content: space-between;
+  height: 140px;
+}
+
+.test input {
+  width: 500px;
+  height: 40px;
+  font-size: 22px;
+  padding: 5px;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  box-shadow: 1px 1px 10px rgb(187, 187, 187);
+}
+
+.test button {
+  font-size: 18px;
+  width: 200px;
+  height: 40px;
+  padding: 5px;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  box-shadow: 1px 1px 10px rgb(237, 214, 255);
+  color: white;
+  background-color: rgb(172, 71, 255);
+  cursor: pointer;
+  transition: 0.1s all ease-in-out;
+}
+.test button:hover{
+  background-color: rgb(155, 32, 255);
+  transition: 0.1s all linear;
+  letter-spacing: 0.05em;
+}
+
+.test p{
+  text-align: center;
+  font-size: 14px;
+}
+
 /* Guidance */
-.guidanceList{
+
+.guidanceList {
   list-style-type: none;
   padding: 0px;
-  
 }
-.guidanceList .list{
+
+.guidanceList .list {
   margin: 20px 0px;
 }
-.guidanceList h3{
+
+.guidanceList h3 {
   font-weight: bold;
   font-size: 16px;
   margin: 0px;
   padding: 0px;
 }
 
-.guidanceList a{
+.guidanceList a {
   text-decoration: none;
   color: dodgerblue;
   font-weight: 600;
 }
 
-.innerList{
-  margin-top:10px ;
+.innerList {
+  margin-top: 10px;
   font-size: 14px;
   color: rgb(146, 146, 146);
 }
-.innerList li{
+
+.innerList li {
   margin: 3px 0px;
 }
-.li3_para{
+
+.li3_para {
   margin-top: 5px;
 }
+
 /* Guidance */
 
-
-
-
-
 /* Timer List (part of CreateNewBar Component) */
+
 /* For All */
-.timerList, .timerList ul{
+
+.timerList, .timerList ul {
   list-style-type: none;
   padding: 0px;
 }
-.timerList{
+
+.timerList {
   width: 100%;
   border-radius: 5px 5px 0px 0px;
 }
-.listHeader, .listBody{
+
+.listHeader, .listBody {
   width: 100%;
 }
-.listColumns{
+
+.listColumns {
   justify-content: space-between !important;
   padding: 7px 0px !important;
 }
-.listCol{
+
+.listCol {
   padding: 5px 0px 5px 5px;
   margin: 0px 1px;
 }
-.colName{
+
+.colName {
   width: 35%;
 }
-.colGeo{
+
+.colGeo {
   width: 15%;
 }
-.colExcluded{
-  width:13%;
+
+.colExcluded {
+  width: 13%;
 }
-.colActions{
+
+.colActions {
   width: 28%;
 }
-.colStatus{
+
+.colStatus {
   width: 10%;
 }
+
 /* For All */
+
 /* List Header */
-.listHeader{
+
+.listHeader {
   background-color: rgb(247, 247, 247);
   border-bottom: 1px solid rgb(168, 168, 168);
 }
-.listHeader .listColumns{
+
+.listHeader .listColumns {
   height: 40px;
 }
-.listHeader .listCol{
+
+.listHeader .listCol {
   background-color: rgb(235, 235, 235);
   height: inherit;
   display: flex;
@@ -194,47 +267,57 @@
   font-size: 15px;
   font-weight: 600;
 }
+
 /* List Header */
 
 /* List Body */
-.listBody{
+
+.listBody {
   margin-top: 5px;
   max-height: 300px;
   overflow-y: auto;
 }
+
 .colStatusVal {
   text-align: center;
   width: 10%;
 }
-.listBody .listCol{
+
+.listBody .listCol {
   font-size: 14px;
 }
-.colStatusVal span{
+
+.colStatusVal span {
   background-color: rgb(92, 255, 92);
   color: green;
   text-align: center;
   padding: 3px 5px;
   border-radius: 3px;
 }
-.listBody .listColumns{
+
+.listBody .listColumns {
   margin-top: 5px;
 }
-.listBody .listColumns:hover{
+
+.listBody .listColumns:hover {
   background-color: rgb(247, 247, 247);
-  transition:all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
-.listBody .listColumns:nth-child(odd){
+
+.listBody .listColumns:nth-child(odd) {
   background-color: rgb(223, 230, 247);
 }
-.listBody .listColumns:nth-child(odd):hover{
+
+.listBody .listColumns:nth-child(odd):hover {
   background-color: rgb(195, 213, 255);
-  transition:all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
-.listBody button{
+
+.listBody button {
   outline: none;
   border: 1px solid transparent;
   padding: 5px 7px;
-  background-color:#3f51b5;
+  background-color: #3f51b5;
   color: whitesmoke;
   border-radius: 3px;
   margin: 0px 1px;
@@ -242,41 +325,26 @@
   font-weight: 100 !important;
   cursor: pointer;
 }
-.listBody button:hover{
-  background-color:rgb(231, 231, 231) ;
-  color: rgb(27,27,27);
+
+.listBody button:hover {
+  background-color: rgb(231, 231, 231);
+  color: rgb(27, 27, 27);
   border: 1px solid #3f51b5;
-  transition:all 0.7s cubic-bezier(0.23, 1, 0.320, 1);
+  transition: all 0.7s cubic-bezier(0.23, 1, 0.320, 1);
 }
+
 /* List Body */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* Timer List (part of CreateNewBar Component) */
 
 /* Basic Template */
-.buttonList{
+
+.buttonList {
   list-style-type: none;
   padding: 0px;
 }
-.buttonList .listItem{
+
+.buttonList .listItem {
   width: 450px;
   text-align: center;
   padding: 10px 5px;
@@ -285,7 +353,8 @@
   cursor: pointer;
   border: 2px solid transparent;
 }
-.buttonList .listItem:hover{
+
+.buttonList .listItem:hover {
   border: 2px solid black;
   width: 460px;
   transition: all 0.2s ease-in-out;
@@ -295,35 +364,41 @@
 
 /* Preview */
 
-.previewTimer{
+.previewTimer {
   background-color: rgb(0, 0, 0);
   justify-content: space-between;
   width: 100%;
 }
-.previewTimer .para{
+
+.previewTimer .para {
   color: #ffbe32;
   max-width: 29%;
   text-align: center;
 }
-.previewTimer .timer{
+
+.previewTimer .timer {
   width: 27%;
 }
-.previewTimer .buttonPlace{
+
+.previewTimer .buttonPlace {
   width: 15%;
   justify-content: flex-end;
   overflow: hidden;
 }
-.heading{
+
+.heading {
   justify-content: space-around !important;
 }
-.heading .small{
+
+.heading .small {
   width: 46px !important;
   color: #ffbe32;
   font-size: 9px;
   text-align: center;
   padding-bottom: 2px;
 }
-.counter .time{
+
+.counter .time {
   background-color: #ffbe32;
   color: black;
   padding: 2px 0px;
@@ -334,50 +409,54 @@
   margin: 0px 1px;
   border-radius: 6px;
 }
-.counter .sep{
+
+.counter .sep {
   font-size: large;
   color: white;
-  margin:0px 2px;
+  margin: 0px 2px;
 }
+
 /* Preview */
 
-
 /* Content Configuration */
-.contentConfigurationHead{
+
+.contentConfigurationHead {
   justify-content: space-between;
 }
-.collapseIcon{
+
+.collapseIcon {
   border: 1px;
-  font-size:large;
+  font-size: large;
   color: rgb(105, 105, 105);
   background-color: whitesmoke;
   cursor: pointer;
   border: 1px solid rgb(177, 177, 177);
   height: 25px;
   width: 25px;
-
 }
-.collapseIcon:hover{
+
+.collapseIcon:hover {
   box-shadow: 2px 2px 8px rgba(128, 128, 128, 0);
 }
 
-.dualInput{
+.dualInput {
   justify-content: space-between;
 }
 
 /* Content Configuration */
 
-
 /* Timer Configuration */
-.timerForm{
+
+.timerForm {
   justify-content: space-between;
 }
-/* Timer Configuration */
 
+/* Timer Configuration */
 
 /* Syle Configuration */
 
 /*This styling is not use but dont remove it. */
+
 /* .colorBox{
   width: 29px;
   height: 29px;
@@ -385,16 +464,18 @@
   margin-right: 3px;
   background-color: #ffbe32;
 } */
-.colorField{
-  width: calc((100% - 30px) / 3 );
+
+.colorField {
+  width: calc((100% - 30px) / 3);
   font-family: Arial, Helvetica, sans-serif !important;
 }
-.selectColor{
+
+.selectColor {
   flex-wrap: wrap;
   justify-content: space-between;
-  
 }
-.colorPicker{
+
+.colorPicker {
   border: none;
   outline: none;
   height: 30px;
@@ -402,16 +483,18 @@
   background-color: transparent;
   cursor: pointer;
 }
-.slider{
+
+.slider {
   width: 50%;
   padding-left: 10px;
 }
 
-.backgroundStyles{
+.backgroundStyles {
   flex-wrap: wrap;
   justify-content: space-around;
 }
-.backgroundStyles .design{
+
+.backgroundStyles .design {
   width: calc((100% - 57px) / 5);
   background-position: center;
   background-repeat: no-repeat;
@@ -424,12 +507,13 @@
   margin-bottom: 10px;
 }
 
-.buttons{
+.buttons {
   justify-content: flex-start;
   flex-wrap: wrap;
 }
-.animateButton{
-  padding:7px 12px;
+
+.animateButton {
+  padding: 7px 12px;
   cursor: pointer;
   outline: none;
   color: black;
@@ -441,8 +525,9 @@
   border-radius: 2px;
   box-shadow: 1px 1px 5px rgba(128, 128, 128, 0.566);
 }
-.selectButton{
-  padding:7px 12px;
+
+.selectButton {
+  padding: 7px 12px;
   cursor: pointer;
   outline: none;
   color: black;
@@ -454,33 +539,34 @@
   border-radius: 2px;
   box-shadow: 1px 1px 5px rgba(128, 128, 128, 0.566);
 }
-.selectButton:hover{
+
+.selectButton:hover {
   box-shadow: 2px 2px 2px rgba(128, 128, 128, 0.566);
   background-color: rgb(252, 252, 252);
-  
 }
 
-.ar{font-family: "Scheherazade",serif; 
-  font-size: 120%;}
+.ar {
+  font-family: "Scheherazade", serif;
+  font-size: 120%;
+}
 
-.styleField{
+.styleField {
   margin: 10px 0px;
 }
-
-
 
 /* Syle Configuration */
 
 /* Next Button */
-.nextButton{ 
+
+.nextButton {
   display: flex;
   justify-content: space-between;
 }
-.errorMesg{
+
+.errorMesg {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 13px;
   color: rgb(255, 49, 49);
-
 }
-/* Next Button */
 
+/* Next Button */

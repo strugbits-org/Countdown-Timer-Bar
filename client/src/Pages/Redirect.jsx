@@ -1,15 +1,44 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useLocation } from "react-router-dom";
 var axios = require('axios');
 
 const Redirect = () => {
+    // const [instance, setInstance] = useState('')
     const search = useLocation().search;
     const code = new URLSearchParams(search).get('code');
-    useEffect(async()=>{
-       let token = await functiontoFetch(code);
-       console.log(token);
-       window.location.replace('https://www.wix.com/_api/site-apps/v1/site-apps/token-received?access_token='+ token)
+    useEffect(async () => {
+        let token = await functiontoFetch(code);
+        console.log(token);
+        saveInstanceId(token)
     })
+
+    const saveInstanceId = (instanceId) => {
+        var raw = JSON.stringify({
+            "instanceKey": instanceId
+        });
+
+        var header = {
+            "Content-Type": "application/json",
+            // "Access-Control-Allow-Origin": true
+        }
+
+        var requestOptions = {
+            method: 'POST',
+            headers: header,
+            body: raw,
+            redirect: 'follow'
+        };
+
+        fetch("http://localhost:3001/admin/createtimer", requestOptions) //http://localhost:3001
+            .then(response => response.text())
+            .then(result => {
+                console.log('POST RESULT - - - - >', JSON.parse(result))
+                window.location.replace('https://www.wix.com/_api/site-apps/v1/site-apps/token-received?access_token=' + instanceId)
+            })
+            .catch(error => {
+                console.log('error', error)
+            });
+    }
     return (
         <div>
             <h1 style={{ textAlign: 'center' }}>hii</h1>
